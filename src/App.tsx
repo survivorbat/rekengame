@@ -7,7 +7,7 @@ import EquationDisplay from './components/EquationDisplay';
 import Hud from './components/Hud';
 
 const getMinFromScore = (score: number) => Math.ceil(score / 20);
-const getMaxFromScore = (score : number) => Math.ceil(score / 2) + 1;
+const getMaxFromScore = (score: number) => Math.ceil(score / 2) + 1;
 const getCountFromScore = (score: number) => (Math.ceil(score / 50) || 1) + 1;
 const getOperatorsFromScore = (score: number): string[] => {
   const operators = ['+'];
@@ -23,7 +23,10 @@ const getOperatorsFromScore = (score: number): string[] => {
   return operators;
 };
 
-function nextEquation(score: number, callback: (equation: math.MathNode) => void) {
+function nextEquation(
+  score: number,
+  callback: (equation: math.MathNode) => void,
+) {
   const count = getCountFromScore(score);
   const min = getMinFromScore(score);
   const max = getMaxFromScore(score);
@@ -36,7 +39,9 @@ function App() {
   const [score, setScore] = useState(0);
   const [equation, setEquation] = useState(generateEquation(['+'], 2, 1, 1));
   const [previousSolution, setPreviousSolution] = useState(0);
-  const [previousCorrect, setPreviousCorrect] = useState((): boolean | undefined => undefined);
+  const [previousCorrect, setPreviousCorrect] = useState(
+    (): boolean | undefined => undefined,
+  );
 
   const validateAnswer = (answer: number) => {
     const solution = equation.evaluate();
@@ -58,7 +63,11 @@ function App() {
     <div className="container">
       <EquationDisplay equation={equation.toString()} />
       <div>
-        <Hud score={score} previousCorrect={previousCorrect} previousSolution={previousSolution} />
+        <Hud
+          score={score}
+          previousCorrect={previousCorrect}
+          previousSolution={previousSolution}
+        />
         <AnswerInput submitAnswerCallback={validateAnswer} />
       </div>
     </div>

@@ -4,7 +4,12 @@ export const randomNumber = (min: number, max: number) => Math.round(Math.random
 
 export const randomOperator = (operators: string[]) => operators[Math.floor(Math.random() * operators.length)];
 
-const generateEquation = (operators: string[], count: number, min: number, max: number): math.MathNode => {
+const generateEquation = (
+  operators: string[],
+  count: number,
+  min: number,
+  max: number,
+): math.MathNode => {
   const start: string[] = [randomNumber(min, max).toString()];
 
   for (let i = 1; i < count; i += 1) {

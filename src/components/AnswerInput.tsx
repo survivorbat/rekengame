@@ -3,7 +3,7 @@ import { useState } from 'react';
 import './AnswerInput.css';
 
 interface InputProps {
-  submitAnswerCallback: (answer: number) => void
+  submitAnswerCallback: (answer: number) => void;
 }
 
 function AnswerInput({ submitAnswerCallback }: InputProps) {
@@ -17,8 +17,17 @@ function AnswerInput({ submitAnswerCallback }: InputProps) {
 
   return (
     <form onSubmit={handleSubmit} className="answer-container">
-      <input type="number" className="answer-input" name="answer" value={answer} required onChange={(e) => setAnswer(e.target.value)} />
-      <button type="submit" className="answer-button">➤</button>
+      <input
+        type="number"
+        className="answer-input"
+        name="answer"
+        value={answer}
+        required
+        onChange={(e) => setAnswer(e.target.value)}
+      />
+      <button type="submit" className="answer-button">
+        ➤
+      </button>
     </form>
   );
 }

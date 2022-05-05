@@ -15,9 +15,16 @@ function Hud({ previousCorrect, previousSolution, score }: InputProps) {
         Score:&nbsp;
         {score}
       </span>
-      <span style={{ visibility: previousCorrect === undefined ? 'hidden' : 'visible' }} className="previous-container">
+      <span
+        style={{
+          visibility: previousCorrect === undefined ? 'hidden' : 'visible',
+        }}
+        className="previous-container"
+      >
         Previous:&nbsp;
-        <span className={`previous-display ${previousSolutionClass}`}>{previousSolution || ''}</span>
+        <span className={`previous-display ${previousSolutionClass}`}>
+          {previousSolution || ''}
+        </span>
       </span>
     </div>
   );

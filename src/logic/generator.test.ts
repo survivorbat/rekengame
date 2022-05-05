@@ -20,10 +20,7 @@ describe('randomNumber', () => {
 });
 
 describe('randomOperator', () => {
-  const testData = [
-    ['a'],
-    ['b', 'c', 'd', 'e'],
-  ];
+  const testData = [['a'], ['b', 'c', 'd', 'e']];
 
   testData.forEach((operators: string[]) => {
     it(`returns a random item in ${operators.join(', ')}`, () => {
