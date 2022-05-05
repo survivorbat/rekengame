@@ -1,0 +1,42 @@
+.answer-container {
+    display: flex;
+    justify-content: center;
+    font-size: 2em;
+    transition: 0.5s;
+}
+
+.answer-container > * {
+    padding: 0.5em;
+    border-radius: 10px;
+    margin: 0.1em;
+    font-weight: bold;
+}
+
+.answer-button {
+    color: white;
+    background-color: #ff9900;
+    border: solid #ffad3c;
+}
+
+.previous-container {
+    display: flex;
+    justify-content: center;
+    color: gray;
+}
+
+.previous-display {
+    font-weight: bold;
+}
+
+.correct {
+    color: green;
+}
+
+.incorrect {
+    color: red;
+}
+
+.hud-container {
+    display: flex;
+    justify-content: space-around;
+}
