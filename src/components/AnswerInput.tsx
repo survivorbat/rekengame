@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { useState } from 'react';
-import './AnswerInput.css';
 
 interface InputProps {
   submitAnswerCallback: (answer: number) => void;
@@ -16,16 +15,17 @@ function AnswerInput({ submitAnswerCallback }: InputProps) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="answer-container">
+    <form className="d-flex justify-content-around" onSubmit={handleSubmit}>
       <input
         type="number"
-        className="answer-input"
+        autoComplete="off"
+        className="form-control"
         name="answer"
         value={answer}
         required
         onChange={(e) => setAnswer(e.target.value)}
       />
-      <button type="submit" className="answer-button">
+      <button type="submit" className="btn btn-primary">
         ➤
       </button>
     </form>

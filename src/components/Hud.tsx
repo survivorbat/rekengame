@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Col, Row } from 'react-bootstrap';
 
 interface InputProps {
   previousSolution: number;
@@ -7,26 +8,25 @@ interface InputProps {
 }
 
 function Hud({ previousCorrect, previousSolution, score }: InputProps) {
-  const previousSolutionClass = previousCorrect ? 'correct' : 'incorrect';
+  const previousSolutionColor = previousCorrect ? 'green' : 'red';
 
   return (
-    <div className="hud-container">
-      <span className="score-container">
+    <Row>
+      <Col>
         Score:&nbsp;
         {score}
-      </span>
-      <span
+      </Col>
+      <Col
         style={{
           visibility: previousCorrect === undefined ? 'hidden' : 'visible',
         }}
-        className="previous-container"
       >
         Previous:&nbsp;
-        <span className={`previous-display ${previousSolutionClass}`}>
+        <span className="fw-bold" style={{ color: previousSolutionColor }}>
           {previousSolution || ''}
         </span>
-      </span>
-    </div>
+      </Col>
+    </Row>
   );
 }
 

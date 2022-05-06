@@ -1,5 +1,4 @@
 import * as React from 'react';
-import './EquationDisplay.css';
 
 interface EquationInputs {
   equation: string;
@@ -7,8 +6,8 @@ interface EquationInputs {
 
 function EquationDisplay({ equation }: EquationInputs) {
   return (
-    <div className="equation-container">
-      <span className="equation-display">{equation}</span>
+    <div className="text-center">
+      <span style={{ fontSize: '10em' }} className="equation-display">{equation}</span>
     </div>
   );
 }

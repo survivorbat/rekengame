@@ -1,6 +1,7 @@
 import * as React from 'react';
 import './App.css';
 import { useState } from 'react';
+import { Col, Container, Row } from 'react-bootstrap';
 import generateEquation from './logic/generator';
 import AnswerInput from './components/AnswerInput';
 import EquationDisplay from './components/EquationDisplay';
@@ -60,17 +61,29 @@ function App() {
   };
 
   return (
-    <div className="container">
-      <EquationDisplay equation={equation.toString()} />
-      <div>
-        <Hud
-          score={score}
-          previousCorrect={previousCorrect}
-          previousSolution={previousSolution}
-        />
-        <AnswerInput submitAnswerCallback={validateAnswer} />
-      </div>
-    </div>
+    <Container>
+      <Row>
+        <Col>
+          <EquationDisplay equation={equation.toString()} />
+        </Col>
+      </Row>
+
+      <Row>
+        <Col>
+          <Hud
+            score={score}
+            previousCorrect={previousCorrect}
+            previousSolution={previousSolution}
+          />
+        </Col>
+      </Row>
+
+      <Row>
+        <Col>
+          <AnswerInput submitAnswerCallback={validateAnswer} />
+        </Col>
+      </Row>
+    </Container>
   );
 }
 
