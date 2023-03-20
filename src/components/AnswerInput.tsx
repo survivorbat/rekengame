@@ -17,12 +17,13 @@ function AnswerInput({ submitAnswerCallback }: InputProps) {
   return (
     <form className="d-flex justify-content-around" onSubmit={handleSubmit}>
       <input
-        type="number"
         autoComplete="off"
         className="form-control"
         name="answer"
         value={answer}
         required
+        {/* eslint-disable-next-line jsx-a11y/no-autofocus */}
+        autoFocus
         onChange={(e) => setAnswer(e.target.value)}
       />
       <button type="submit" className="btn btn-primary">
