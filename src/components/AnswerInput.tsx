@@ -22,7 +22,6 @@ function AnswerInput({ submitAnswerCallback }: InputProps) {
         name="answer"
         value={answer}
         required
-        {/* eslint-disable-next-line jsx-a11y/no-autofocus */}
         autoFocus
         onChange={(e) => setAnswer(e.target.value)}
       />

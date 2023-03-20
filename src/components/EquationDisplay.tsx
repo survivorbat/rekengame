@@ -7,7 +7,9 @@ interface EquationInputs {
 function EquationDisplay({ equation }: EquationInputs) {
   return (
     <div className="text-center">
-      <span style={{ fontSize: '10em' }} className="equation-display">{equation}</span>
+      <span style={{ fontSize: '10em' }} className="equation-display">
+        {equation}
+      </span>
     </div>
   );
 }
