@@ -18,6 +18,7 @@ function AnswerInput({ submitAnswerCallback }: InputProps) {
     <form className="d-flex justify-content-around" onSubmit={handleSubmit}>
       <input
         autoComplete="off"
+        type="number"
         className="form-control"
         name="answer"
         value={answer}
